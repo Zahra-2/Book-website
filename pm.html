@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Books </h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="about.html">About</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to Our WebSite</h2>
+            <p>Welcome to our site! We have selected the most popular types of books for you to enjoy discovering new and exciting books. We hope you have a great time !</p>
+        </div>
+    </section>
+
+    <section id="books">
+        <div class="container">
+            <h2>Featured Books</h2>
+            <div class="book-list">
+                <div class="book">
+                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387663113i/669780.jpg" alt="Book 1">
+                    <h3>"Season of Migration to the North" (موسم الهجرة إلى الشمال) </h3>
+                    <p>Writer: Tayeb Salih</p>
+                    <p>Date Created: 1966</p>
+                </div>
+                <div class="book">
+                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387743189i/125251.jpg" alt="Book 2">
+                    <h3>"Men in the Sun" (رجال في الشمس) </h3>
+                    <p>Writer: Ghassan Kanafani</p>
+                    <p>Date Created: 1963</p>
+                </div>
+               <div class="book">
+                    <img src="https://cdn.salla.sa/mDXeN/HsZqWzSgq86dlhRzF3z1CKRkKg0WxyD4JaLBPQoG.jpg" alt="Book 2">
+                    <h3>"Saudi Folktales" (الحكايات الشعبية السعودية) </h3>
+                    <p>Writer: A group of Saudi authors </p>
+                    <p>Date Created: A group of Saudi authors </p>
+                </div>
+               <div class="book">
+                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Cassim.jpg/330px-Cassim.jpg" alt="Book 2">
+                    <h3>"Tales of the Arabian Nights" (ألف ليلة وليلة) </h3>
+                    <p>Writer: unkown </p>
+                    <p>Date Created: 1706–1721 </p>
+                </div>
+               <div class="book">
+            <img src="https://sa.tanagra.me/dw/image/v2/BDCL_PRD/on/demandware.static/-/Sites-tanagra-master-catalog/default/dw71b1c9b1/images/058816176777_1.jpg?sw=800&sh=800&sm=fit" alt="Book 2">
+            <h3> Red Sea بحر احمر</h3>
+                    <p>Writer: Christopher Smith </p>
+                    <p>Date Created:2022 </p>
+                </div>
+               <div class="book">
+                   <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRswNWv0Z67QAlhmxX5SAp3gnWkAtaJZgBZzJqqvUdq0Jo8JSvj" alt="Book 2">
+                    <h3>Saudi Dates</h3>
+                    <p>Writer: Mohammed Bin Ismail Al-Ismail</p>
+                    <p>Date Created: 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2024 Books Website. All rights reserved.</p>
+            <p>Contact us at: zahra.hassan@gmail.com</p>
+        </div>
+    </footer>
+ <div id="add-book-form">
+        <h2>Add a New Book</h2>
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="author" placeholder="Author">
+        <input type="number" id="year" placeholder="Year">
+        <button onclick="addBook()">Add Book</button>
+    </div>
+
+    <script>
+        // Sample book data
+        let books = [
+            { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
+            { title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 },
+            { title: "1984", author: "George Orwell", year: 1949 },
+            { title: "Pride and Prejudice", author: "Jane Austen", year: 1813 }
+        ];
+
+        // Function to add a new book
+        function addBook() {
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const year = document.getElementById('year').value;
+
+            // Validate input
+            if (title && author && year) {
+                const newBook = { title, author, year: parseInt(year) };
+                books.push(newBook);
+                alert('Book added successfully!');
+                // Clear input fields after adding book
+                document.getElementById('title').value = '';
+                document.getElementById('author').value = '';
+                document.getElementById('year').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+    </script>
+    <script>
+        window.onload = function() {
+            alert("Welcome to our Website!");
+        };
+    </script>
+</body>
+</html>
